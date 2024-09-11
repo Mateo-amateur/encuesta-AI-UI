@@ -1,0 +1,16 @@
+.questions__wrapper {
+  background-color: #191919;
+  margin: 10px;
+}
+
+.question input[type=radio] {
+  display: none;
+}
+
+.question label {
+  cursor: pointer;
+}
+
+.option input:checked~label {
+  color: #ffb300;
+}
