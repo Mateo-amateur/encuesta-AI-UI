@@ -1,10 +1,14 @@
 import './Page1.css'
 
 // eslint-disable-next-line react/prop-types
-export function Page1({ changePage }) {
+export function Page1({ changePage, changeData }) {
   return (
     <form className='form' action="" onSubmit={(e) => {
       e.preventDefault()
+      const info = Object.fromEntries(
+        new FormData(e.target)
+      )
+      changeData({ info })
       changePage()
     }}>
       <h3>Información personal</h3>

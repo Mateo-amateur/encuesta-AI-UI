@@ -1,9 +1,24 @@
 import './Page2.css'
 
-export function Page2({ changePage }) {
+export function Page2({ changePage, changeData }) {
   return (
     <form className='form' action="" onSubmit={(e) => {
       e.preventDefault()
+      const questions = document.querySelectorAll(".question")
+      let info = {}
+      for (const q of questions) {
+        const input = q.querySelector('input[type="radio"]:checked')
+        if (input) {
+          const inputId = input.id.split('-')[1]
+          info[q.id] = inputId
+        }
+      }
+
+      console.log(info);
+
+
+      changeData({ info })
+
       changePage()
     }}>
       <div className="question" id='questionA'>

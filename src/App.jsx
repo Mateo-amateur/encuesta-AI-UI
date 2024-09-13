@@ -5,7 +5,7 @@ function App() {
   const { choosePage } = usePages()
   return (
     <main>
-      {choosePage()}
+      {choosePage({ info: '' })}
     </main>
   )
 }
