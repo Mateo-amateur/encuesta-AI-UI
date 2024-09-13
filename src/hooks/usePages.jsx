@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Page1 } from "../pages/page1"
 import { Page2 } from "../pages/Page2"
-import { useRef } from "react"
+import { postRegister } from "../logic/postRegister"
 
 export function usePages() {
   const [page, setPage] = useState(1)
@@ -20,6 +20,7 @@ export function usePages() {
         <Page2 changePage={changePage} changeData={changeData} />
       )
     } else {
+      postRegister({ data })
       return (
         <h1>Registro realizado exitosamente</h1>
       )

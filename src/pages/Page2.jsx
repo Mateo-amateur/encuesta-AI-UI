@@ -10,7 +10,7 @@ export function Page2({ changePage, changeData }) {
         const input = q.querySelector('input[type="radio"]:checked')
         if (input) {
           const inputId = input.id.split('-')[1]
-          info[q.id] = inputId
+          info[q.id] = parseInt(inputId)
         }
       }
 
@@ -21,7 +21,7 @@ export function Page2({ changePage, changeData }) {
 
       changePage()
     }}>
-      <div className="question" id='questionA'>
+      <div className="question" id='response1'>
         <p>¿Qué efecto tendrá la Inteligencia artificial en tu vida?</p>
         <div className='option'>
           <input type="radio" name='questionA' id="a-1" />
@@ -52,7 +52,7 @@ export function Page2({ changePage, changeData }) {
           <label htmlFor="a-7">7)	Prefiero no contestar </label>
         </div>
       </div>
-      <div className="question" id='questionB'>
+      <div className="question" id='response2'>
         <p>¿Utilizas la Inteligencia artificial para realizar tareas/trabajos?</p>
         <div className='option'>
           <input type="radio" name='questionB' id="b-1" />
@@ -67,7 +67,7 @@ export function Page2({ changePage, changeData }) {
           <label htmlFor="b-3">3) No y no planeo hacerlo</label>
         </div>
       </div>
-      <div className="question" id='questionC'>
+      <div className="question" id='response3'>
         <p>¿Cómo afectará a los empleos?</p>
         <div className='option'>
           <input type="radio" name='questionC' id="c-1" />
@@ -90,7 +90,7 @@ export function Page2({ changePage, changeData }) {
           <label htmlFor="c-5">5)	Prefiero no contestar</label>
         </div>
       </div>
-      <div className="question" id='questionD'>
+      <div className="question" id='response4'>
         <p>¿Cómo afectará a la seguridad social?</p>
         <div className='option'>
           <input type="radio" name='questionD' id="d-1" />
@@ -105,8 +105,8 @@ export function Page2({ changePage, changeData }) {
           <label htmlFor="d-3">3)	Disminuirá levemente la seguridad</label>
         </div>
         <div className='option'>
-          <input type="radio" name='questionD' id="d-3" />
-          <label htmlFor="d-3">4)	Disminuirá gravemente la seguridad </label>
+          <input type="radio" name='questionD' id="d-4" />
+          <label htmlFor="d-4">4)	Disminuirá gravemente la seguridad </label>
         </div>
         <div className='option'>
           <input type="radio" name='questionD' id="d-5" />
