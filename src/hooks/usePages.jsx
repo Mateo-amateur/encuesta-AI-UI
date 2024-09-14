@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { Page1 } from "../pages/page1"
-import { Page2 } from "../pages/Page2"
-import { postRegister } from "../logic/postRegister"
+import { Page1 } from "../pages/Page1.jsx"
+import { Page2 } from "../pages/Page2.jsx"
+import { postRegister } from "../logic/postRegister.js"
 
 export function usePages() {
   const [page, setPage] = useState(1)
