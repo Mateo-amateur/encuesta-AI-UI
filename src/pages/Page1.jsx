@@ -59,13 +59,13 @@ export function Page1({ changePage, changeData }) {
       <h3>Información personal</h3>
       <label className="question">
         Nombre y Apellido:
-        <input type="text" name="name" placeholder="Juan" required />
-        <input type="text" name="last_name" placeholder="Perez" required />
+        <input autoComplete='false' type="text" name="name" placeholder="Juan" required />
+        <input autoComplete='false' type="text" name="last_name" placeholder="Perez" required />
         <span className='error'>{error}</span>
       </label>
       <label className='question'>
         Edad
-        <input type="number" name="edge" placeholder="34 años" required />
+        <input autoComplete='false' type="number" name="edge" placeholder="34 años" required />
       </label>
       <input type="submit" value="Siguiente" />
     </form>
