@@ -10,7 +10,7 @@ export function Page2({ changePage, getData }) {
   const letters = ["a", "b", "c", "d"]
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  let [res, setRes] = useState()
+  const [indexQuestion, setIndexQuestion] = useState(1)
 
   useEffect(() => {
     if (error) setLoading(false)
@@ -20,33 +20,47 @@ export function Page2({ changePage, getData }) {
     setError(msg)
   }
 
-  const handleChange = async (e) => {
-    setLoading(true)
-    e.preventDefault()
-    const questions = document.querySelectorAll(".question")
-    let isAllData = true
-    let info = {}
-    for (const q of questions) {
-      try {
-        const input = q.querySelector('input[type="radio"]:checked')
-        if (input) {
-          const inputId = input.id.split('-')[1]
-          info[q.id] = parseInt(inputId)
-        } else isAllData = false
-      } catch {
-        isAllData = false
-      }
+  useEffect(() => {
+    const formerQuestion = document.getElementById(`response${indexQuestion - 1}`)
+    const question = document.getElementById(`response${indexQuestion}`)
+    if (question) {
+      if (formerQuestion) formerQuestion.style.display = 'none'
+      question.style.display = 'flex'
     }
+  }, [indexQuestion])
 
-    if (isAllData) {
-      let data = getData()
-      data = Object.assign({}, data, info)
-      const res = await postRegister({ data })
-      setRes(res)
-      setLoading(false)
-      changePage()
-    } else {
-      showError({ msg: 'Elige una respuesta para todas las preguntas' })
+  const handleChange = async (e) => {
+    e.preventDefault()
+    const newIndex = indexQuestion + 1
+    if (document.querySelector(`#response${indexQuestion} input[type="radio"]:checked`)) {
+      setIndexQuestion(newIndex)
+    }
+    if (indexQuestion === listQuestions.length) {
+      setLoading(true)
+      const questions = document.querySelectorAll(".question")
+      let isAllData = true
+      let info = {}
+      for (const q of questions) {
+        try {
+          const input = q.querySelector('input[type="radio"]:checked')
+          if (input) {
+            const inputId = input.id.split('-')[1]
+            info[q.id] = parseInt(inputId)
+          } else isAllData = false
+        } catch {
+          isAllData = false
+        }
+      }
+
+      if (isAllData) {
+        let data = getData()
+        data = Object.assign({}, data, info)
+        await postRegister({ data })
+        setLoading(false)
+        changePage()
+      } else {
+        showError({ msg: 'Elige una respuesta para todas las preguntas' })
+      }
     }
   }
 
@@ -72,7 +86,7 @@ export function Page2({ changePage, getData }) {
       {
         listQuestions.map(q => {
           return (
-            <div className="question" key={q.id} id={`response${q.id}`}>
+            <div style={{ display: 'none' }} className="question" key={q.id} id={`response${q.id}`}>
               <p>{q.question}</p>
               {q.options.map(o => {
                 return (
