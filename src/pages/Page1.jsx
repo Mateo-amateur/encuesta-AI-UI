@@ -26,14 +26,17 @@ export function Page1({ changePage, changeData }) {
       new FormData(e.target)
     )
 
-    const isValid = await checkData({ name: info.name, lastName: info.last_name })
+    const isNameUnique = await checkData({ name: info.name, lastName: info.last_name })
 
-    if (isValid) {
+    const isValidEdge = 5 < info.edge && info.edge < 120
+
+    if (isNameUnique && isValidEdge) {
       changeData({ info })
       changePage()
       setLoading(true)
     } else {
-      showError({ msg: 'Este nombre y apellido están registrados' })
+      if (!isNameUnique) showError({ msg: 'Este nombre y apellido están registrados' })
+      if (!isValidEdge) showError({ msg: 'No es una edad válida' })
     }
   }
 
