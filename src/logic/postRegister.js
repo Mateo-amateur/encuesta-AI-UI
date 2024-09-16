@@ -1,6 +1,8 @@
+import { URL_API } from "../constants"
+
 export function postRegister({ data }) {
   const { name, last_name, edge, response1, response2, response3, response4 } = data
-  fetch("https://encuesta-ai-api.onrender.com/register", {
+  fetch(`${URL_API}register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
