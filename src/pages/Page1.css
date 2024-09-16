@@ -29,3 +29,15 @@ h3 {
   color: #f33;
   font-size: 16px;
 }
+
+.spinner__wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: 100dvh;
+  min-width: 100dvw;
+  background-color: #222;
+  opacity: 0.5;
+}
