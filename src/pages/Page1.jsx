@@ -9,6 +9,7 @@ export function Page1({ changePage, changeData }) {
   const showError = ({ msg }) => {
     setError(msg)
   }
+
   return (
     <form className='form' action="" onSubmit={async (e) => {
       e.preventDefault()
