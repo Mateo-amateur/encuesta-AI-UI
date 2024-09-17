@@ -55,9 +55,10 @@ export function Page2({ changePage, getData }) {
       if (isAllData) {
         let data = getData()
         data = Object.assign({}, data, info)
-        await postRegister({ data })
+        const res = await postRegister({ data })
         setLoading(false)
-        changePage()
+        if (res.data) changePage()
+        if (res.error) showError("Hubo un error. Por favor, inténtelo más tarde")
       } else {
         showError({ msg: 'Elige una respuesta para todas las preguntas' })
       }

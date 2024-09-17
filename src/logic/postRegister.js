@@ -22,7 +22,8 @@ export function postRegister({ data }) {
     })
       .then(res => res.json)
       .then(res => {
-        return res
+        if (res.error) return { error: res.error }
+        return { data: res }
       })
   } catch (error) {
     return { error: error }
