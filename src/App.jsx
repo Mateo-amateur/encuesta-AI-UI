@@ -1,12 +1,16 @@
 import './App.css'
+import { Header } from './components/Header'
 import { usePages } from "./hooks/usePages"
 
 function App() {
   const { choosePage } = usePages()
   return (
-    <main>
-      {choosePage({ info: '' })}
-    </main>
+    <>
+      <Header />
+      <main>
+        {choosePage({ info: '' })}
+      </main>
+    </>
   )
 }
 

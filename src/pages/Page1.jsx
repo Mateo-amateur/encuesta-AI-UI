@@ -46,7 +46,7 @@ export function Page1({ changePage, changeData }) {
         <TailSpin
           className="spinner"
           visible={true}
-          color="#ffb300"
+          color="#eee"
           ariaLabel="tail-spin-loading"
           radius="1"
           wrapperStyle={{

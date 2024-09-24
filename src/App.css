@@ -5,8 +5,25 @@
   --text-color: #e0e0e0;
 }
 
-a {
-  color: #bb86fc;
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #191919;
+  color: var(--text-color);
+}
+
+.spinner {
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 30px;
 }
 
 button {
