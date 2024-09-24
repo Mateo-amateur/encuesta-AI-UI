@@ -17,6 +17,9 @@ importers:
       react-loader-spinner:
         specifier: ^6.1.6
         version: 6.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      simpledotcss:
+        specifier: ^2.3.2
+        version: 2.3.2
     devDependencies:
       '@eslint/js':
         specifier: ^9.9.0
@@ -1645,6 +1648,9 @@ packages:
 
   signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+
+  simpledotcss@2.3.2:
+    resolution: {integrity: sha512-/LoZHX66g+DDj1HzinshbSujFKQ+VP3t9cE1+aTtKCQCXJMNWKiVRZlpXMXCamnGquQOwgeMZsAtvdZd5hdpdQ==}
 
   slice-ansi@3.0.0:
     resolution: {integrity: sha512-pSyv7bSTC7ig9Dcgbw9AuRNUb5k5V6oDudjZoMBSr13qpLBG7tB+zgCkARjq7xIUgdz5P1Qe8u+rSGdouOOIyQ==}
@@ -3567,6 +3573,8 @@ snapshots:
       object-inspect: 1.13.2
 
   signal-exit@3.0.7: {}
+
+  simpledotcss@2.3.2: {}
 
   slice-ansi@3.0.0:
     dependencies:

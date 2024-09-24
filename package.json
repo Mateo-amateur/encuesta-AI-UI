@@ -13,14 +13,15 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-loader-spinner": "^6.1.6"
+    "react-loader-spinner": "^6.1.6",
+    "simpledotcss": "^2.3.2"
   },
   "devDependencies": {
-    "cypress": "^13.14.2",
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "cypress": "^13.14.2",
     "eslint": "^9.9.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.30.0",

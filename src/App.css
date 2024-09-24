@@ -1,4 +1,30 @@
+@import url('simpledotcss/simple.min.css');
+
+:root {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+}
+
+a {
+  color: #bb86fc;
+}
+
+button {
+  background-color: #333;
+  color: var(--text-color);
+  border: 1px solid #555;
+}
+
+input {
+  background-color: #333;
+  color: var(--text-color);
+  border: 1px solid #555;
+}
+
+
 body {
+  background-color: var(--background-color);
+  color: var(--text-color);
   display: flex;
   min-height: 100dvh;
   flex-direction: column;
